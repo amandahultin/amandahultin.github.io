@@ -3,468 +3,303 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda Hultin — Hjälper dig att synas</title>
-  <meta name="description" content="Jag hjälper dig att synas — från hemsida och storytelling till annonsering och nyhetsbrev. Kontakta mig för en kostnadsfri rådgivning.">
-  <meta property="og:title" content="Amanda Hultin — Hjälper dig att synas">
-  <meta property="og:description" content="Jag hjälper dig att synas — från hemsida och storytelling till annonsering och nyhetsbrev.">
+  <title>Amanda Hultin — Storytelling &amp; content marketing för sport, hälsa och välmående</title>
+  <meta name="description" content="Jag hjälper varumärken inom sport, hälsa och välmående att synas genom storytelling, native advertising och content marketing. Kontakta mig för en kostnadsfri rådgivning.">
+  <meta property="og:title" content="Amanda Hultin — Storytelling &amp; content marketing för sport, hälsa och välmående">
+  <meta property="og:description" content="Jag hjälper varumärken inom sport, hälsa och välmående att synas genom storytelling, native advertising och content marketing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://amandahultin.se">
+  <meta property="og:image" content="https://amandahultin.se/assets/hero-photo.jpg">
   <link rel="canonical" href="https://amandahultin.se">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="manifest" href="site.webmanifest">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Amanda Hultin",
     "url": "https://amandahultin.se",
-    "description": "Marknadsföringskonsult som hjälper dig att synas genom hemsidor, storytelling, annonsering och nyhetsbrev.",
+    "description": "Frilansande marknadsföringskonsult som hjälper varumärken inom sport, hälsa och välmående att synas genom storytelling, native advertising och content marketing.",
     "founder": {
       "@type": "Person",
       "name": "Amanda Hultin",
       "jobTitle": "Marknadsföringskonsult"
     },
     "areaServed": "SE",
-    "serviceType": ["Webbdesign", "Content marketing", "Annonsering", "Nyhetsbrev", "Storytelling"]
+    "serviceType": ["Storytelling", "Native advertising", "Content marketing"]
   }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --coral: #E05A3A;
-      --coral-light: #F28B6E;
-      --coral-dark: #C44425;
-      --blush: #FFF0ED;
-      --cream: #FFFBFA;
-      --navy: #1A1F36;
-      --navy-light: #6B7194;
-      --warm-gray: #F7F5F3;
-      --lavender: #D8D0E8;
-      --electric-blue: #3A6BE0;
-      --sunny: #F5C563;
-      --mint: #4ECBA5;
+      --bg: #FAF8F5;
+      --ink: #141414;
+      --grey: #5F5F5F;
+
+      --purple: #7C52DC;
+      --purple-soft: #D6C7FA;
+
+      --orange: #E05C1E;
+      --orange-soft: #FFC8A8;
+
+      --green: #0E9452;
+      --green-soft: #B2E8C7;
+
+      --white: #FFFFFF;
     }
 
     body {
       font-family: 'Sora', sans-serif;
-      color: var(--navy);
-      background: var(--cream);
+      color: var(--ink);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
+      line-height: 1.5;
     }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
     /* ── NAV ── */
     nav {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.25rem 2.5rem;
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,251,250,0.9);
+      background: rgba(250,248,245,0.9);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
     .nav-left { display: flex; align-items: center; gap: 0.6rem; }
-    .nav-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--coral);
-    }
+    .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--purple); }
     .nav-name {
-      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      font-size: 0.95rem; font-weight: 700; color: var(--ink);
       text-decoration: none; letter-spacing: -0.3px;
     }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a {
-      font-size: 0.8rem; font-weight: 500; text-decoration: none;
-      color: var(--navy-light); transition: color 0.3s;
+      font-size: 0.85rem; font-weight: 500; text-decoration: none;
+      color: var(--grey); transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--coral); }
+    .nav-links a:hover { color: var(--purple); }
     .nav-cta {
-      background: var(--coral) !important; color: #fff !important;
-      padding: 0.55rem 1.3rem; border-radius: 50px;
-      font-weight: 600 !important; font-size: 0.8rem !important;
-      transition: background 0.3s, transform 0.2s !important;
+      background: var(--purple) !important; color: #fff !important;
+      padding: 0.6rem 1.4rem; border-radius: 50px;
+      font-weight: 600 !important; font-size: 0.85rem !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .nav-cta:hover { background: var(--coral-dark) !important; transform: translateY(-1px); }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(124,82,220,0.35); }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
 
-    /* ── HERO — full width, big type ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
-      padding: 8rem 2rem 4rem;
-      position: relative; overflow: hidden;
+    /* ── SHARED ── */
+    .eyebrow {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--purple);
+      margin-bottom: 0.75rem;
     }
-
-    /* Animated decorative circles */
-    .circle {
-      position: absolute; border-radius: 50%; z-index: 0;
-    }
-    .circle-1 {
-      width: 420px; height: 420px;
-      background: linear-gradient(135deg, var(--sunny), #F8D98A);
-      top: 3%; left: -10%;
-      opacity: 0.35;
-      animation: float1 18s ease-in-out infinite;
-    }
-    .circle-2 {
-      width: 320px; height: 320px;
-      background: linear-gradient(135deg, var(--lavender), #C4B8E0);
-      bottom: 8%; right: -6%;
-      opacity: 0.45;
-      animation: float2 22s ease-in-out infinite;
-    }
-    .circle-3 {
-      width: 180px; height: 180px;
-      background: linear-gradient(135deg, var(--coral-light), var(--coral));
-      top: 18%; right: 12%;
-      opacity: 0.18;
-      animation: float3 15s ease-in-out infinite;
-    }
-    .circle-4 {
-      width: 100px; height: 100px;
-      background: linear-gradient(135deg, var(--mint), #7EDDBF);
-      bottom: 25%; left: 8%;
-      opacity: 0.25;
-      animation: float4 20s ease-in-out infinite;
-    }
-    .circle-5 {
-      width: 60px; height: 60px;
-      background: linear-gradient(135deg, var(--electric-blue), #6B9BF0);
-      top: 40%; left: 18%;
-      opacity: 0.15;
-      animation: float5 16s ease-in-out infinite;
-    }
-
-    @keyframes float1 {
-      0%, 100% { transform: translate(0, 0); }
-      25% { transform: translate(30px, 20px); }
-      50% { transform: translate(15px, -15px); }
-      75% { transform: translate(-20px, 10px); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0); }
-      25% { transform: translate(-25px, -15px); }
-      50% { transform: translate(-10px, 25px); }
-      75% { transform: translate(20px, -10px); }
-    }
-    @keyframes float3 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(-15px, 20px) scale(1.05); }
-      66% { transform: translate(10px, -10px) scale(0.95); }
-    }
-    @keyframes float4 {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(20px, -25px); }
-    }
-    @keyframes float5 {
-      0%, 100% { transform: translate(0, 0); }
-      33% { transform: translate(15px, 15px); }
-      66% { transform: translate(-10px, 5px); }
-    }
-
-    .hero-content { position: relative; z-index: 1; max-width: 800px; }
-    .hero-badge {
+    h1, h2 { font-weight: 800; line-height: 1.08; letter-spacing: -1px; }
+    .cta-button {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--blush); color: var(--coral);
-      padding: 0.5rem 1.2rem; border-radius: 50px;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px;
-      text-transform: uppercase; margin-bottom: 2rem;
+      background: var(--purple); color: #fff;
+      padding: 1rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      border: none; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(124,82,220,0.35);
+    }
+
+    /* ── HERO ── */
+    .hero { padding-top: 4.5rem; }
+    .hero-badge {
+      display: inline-flex; align-items: center;
+      background: var(--purple); color: #fff;
+      padding: 0.5rem 1.1rem; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .hero-accent {
+      width: 40px; height: 6px; border-radius: 3px;
+      background: var(--purple); margin: 1.5rem 0 1.25rem;
     }
     .hero h1 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 400; line-height: 1.05;
-      letter-spacing: -1.5px;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      margin-bottom: 1.25rem;
     }
-    .hero h1 em {
-      font-style: italic; color: var(--coral);
-    }
-    .hero p {
-      font-size: 1.1rem; color: var(--navy-light);
-      max-width: 500px; margin: 0 auto 2.5rem;
-      line-height: 1.8; font-weight: 300;
-    }
-    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--coral); color: #fff;
-      padding: 1rem 2.2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.9rem;
-      transition: all 0.3s; border: none; cursor: pointer;
-      letter-spacing: -0.2px;
-    }
-    .btn-primary:hover {
-      background: var(--coral-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(224,90,58,0.35);
-    }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: transparent; color: var(--navy);
-      padding: 1rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 500; font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-    .btn-ghost:hover { color: var(--coral); }
-
-    /* Scroll indicator */
-    .scroll-indicator {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      color: var(--navy-light); font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 1px; text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px; height: 40px; background: var(--coral-light);
-      position: relative; overflow: hidden;
-    }
-    .scroll-line::after {
-      content: ''; position: absolute; top: -100%;
-      width: 100%; height: 50%; background: var(--coral);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0% { top: -50%; } 50% { top: 100%; } 100% { top: -50%; }
+    .hero-lead {
+      color: var(--grey); font-size: 1.05rem;
+      max-width: 480px; line-height: 1.6;
+      margin-bottom: 2rem;
     }
 
-    /* ── SERVICES — bento grid ── */
-    .services { padding: 6rem 2rem; }
-    .services-header {
-      text-align: center; max-width: 550px;
-      margin: 0 auto 4rem;
+    /* Mobile hero layout (default) */
+    .hero-media { position: relative; }
+    .hero-media img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%;
     }
-    .section-overline {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--coral);
-      margin-bottom: 1rem;
+    .hero-media .hero-badge { position: absolute; top: 1.25rem; left: 1.25rem; }
+    .hero-content { padding: 2.5rem 1.5rem 4rem; }
+    .hero-content .hero-badge { display: none; }
+    .hero-desktop-blob { display: none; }
+
+    @media (min-width: 900px) {
+      .hero { display: grid; grid-template-columns: 54% 46%; align-items: stretch; min-height: 88vh; }
+      .hero-content {
+        order: 1; padding: 0 3rem 0 3.5rem;
+        display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        position: relative; z-index: 1;
+      }
+      .hero-media { order: 2; position: relative; }
+      .hero-media img { height: 100%; aspect-ratio: auto; object-position: center 15%; }
+      .hero-media .hero-badge { display: none; }
+      .hero-content .hero-badge { display: inline-flex; position: relative; z-index: 1; }
+      .hero-desktop-blob {
+        display: block; position: absolute;
+        width: 420px; height: 420px; border-radius: 50%;
+        background: var(--purple-soft); opacity: 0.55;
+        top: -8%; left: -12%; z-index: 0;
+      }
+      .hero-lead { max-width: 460px; }
     }
+
+    /* ── SERVICES ── */
+    .services { padding: 5rem 1.5rem; }
+    .services-header { max-width: 560px; margin: 0 auto 3rem; text-align: center; }
     .section-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400; line-height: 1.15;
-      letter-spacing: -0.5px;
-      margin-bottom: 1rem;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-bottom: 0.5rem;
     }
-    .section-sub { color: var(--navy-light); font-size: 1rem; font-weight: 300; }
+    .services-header .eyebrow { justify-content: center; }
 
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1.2rem;
-      max-width: 1000px; margin: 0 auto;
+    .services-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 1.25rem; max-width: 1000px; margin: 0 auto;
     }
-    .bento-card {
-      border-radius: 20px; padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative; overflow: hidden;
+    .service-card {
+      background: var(--white); border-radius: 20px;
+      padding: 2rem;
     }
-    .bento-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    }
-    .bento-1 {
-      grid-column: span 2;
-      background: linear-gradient(145deg, #FFF0E8, #FFE0D0);
-    }
-    .bento-2 {
-      grid-column: span 2;
-      background: linear-gradient(145deg, #F5C563, #F0B840);
-      color: var(--navy);
-    }
-    .bento-3 {
-      grid-column: span 2;
-      background: linear-gradient(145deg, #E8F5EE, #D0EDDC);
-    }
-    .bento-4 {
-      grid-column: span 2;
-      background: linear-gradient(145deg, var(--coral), #E8725C);
-      color: #fff;
-    }
-    .bento-card .bento-icon {
-      font-size: 1.8rem; margin-bottom: 1rem;
-      width: 48px; height: 48px;
+    .service-number {
+      width: 44px; height: 44px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      border-radius: 14px;
+      font-weight: 800; font-size: 1rem;
+      margin-bottom: 1.25rem;
     }
-    .bento-1 .bento-icon { background: rgba(224,90,58,0.12); }
-    .bento-2 .bento-icon { background: rgba(26,31,54,0.1); }
-    .bento-3 .bento-icon { background: rgba(78,203,165,0.15); }
-    .bento-4 .bento-icon { background: rgba(255,255,255,0.2); }
-    .bento-card h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 1.4rem; font-weight: 400; margin-bottom: 0.6rem;
-    }
-    .bento-card p {
-      font-size: 0.9rem; line-height: 1.7; opacity: 0.8; font-weight: 300;
-    }
-    .bento-4 h3 { color: #fff; }
-    .bento-2 h3 { color: var(--navy); }
+    .service-card:nth-child(1) .service-number { background: var(--purple-soft); color: var(--purple); }
+    .service-card:nth-child(2) .service-number { background: var(--orange-soft); color: var(--orange); }
+    .service-card:nth-child(3) .service-number { background: var(--green-soft); color: var(--green); }
+    .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.3px; }
+    .service-card p { color: var(--grey); font-size: 0.95rem; line-height: 1.55; }
 
-    /* ── ABOUT — asymmetric ── */
-    .about-section {
-      padding: 6rem 2rem;
-      background: var(--warm-gray);
+    @media (min-width: 800px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
     }
+
+    /* ── ABOUT ── */
+    .about-section { padding: 5rem 1.5rem; }
     .about-grid {
       max-width: 1000px; margin: 0 auto;
-      display: grid; grid-template-columns: 5fr 4fr;
-      gap: 4rem; align-items: center;
+      display: grid; grid-template-columns: 1fr;
+      gap: 3rem; align-items: center;
     }
-    .about-text .section-overline { text-align: left; }
-    .about-text .section-title { text-align: left; }
+    .about-photo-col { order: -1; }
+    .about-photo {
+      border-radius: 20px; overflow: hidden; aspect-ratio: 3/4;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
     .about-text p {
-      color: var(--navy-light); font-size: 1rem;
-      margin-bottom: 1.2rem; line-height: 1.8; font-weight: 300;
+      color: var(--grey); font-size: 1rem;
+      margin-bottom: 1.1rem; line-height: 1.65;
     }
     .about-sig {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 1.6rem;
-      color: var(--coral); margin-top: 0.5rem;
-    }
-    .about-cta {
-      margin-top: 2rem;
-    }
-    .about-photo-col {
-      position: relative;
-    }
-    .about-photo {
-      border-radius: 24px; aspect-ratio: 3/4;
-      overflow: hidden;
-      position: relative;
-    }
-    .about-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      display: block;
-    }
-    .about-photo-accent {
-      position: absolute; bottom: -20px; right: -20px;
-      width: 120px; height: 120px; border-radius: 50%;
-      background: var(--lavender); z-index: -1;
-    }
-    .about-photo-accent-2 {
-      position: absolute; top: -15px; left: -15px;
-      width: 80px; height: 80px; border-radius: 50%;
-      background: var(--sunny); opacity: 0.3; z-index: -1;
+      font-weight: 700; color: var(--purple); margin-top: 0.5rem; margin-bottom: 2rem;
     }
 
-    /* ── SHOWCASE ── */
-    .showcase { padding: 6rem 2rem; text-align: center; }
-    .showcase-card {
-      max-width: 900px; margin: 3rem auto 0;
-      background: linear-gradient(145deg, #5B4A8A, #7B68AE); border-radius: 24px;
-      padding: 0; color: #fff;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; align-items: stretch; text-align: left;
-      overflow: hidden;
+    .ig-card {
+      background: var(--white); border-radius: 20px; padding: 1.5rem;
+      max-width: 420px;
     }
-    .showcase-card-text {
-      padding: 3rem;
-      display: flex; flex-direction: column; justify-content: center;
+    .ig-card-head { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+    .ig-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF);
+      display: flex; align-items: center; justify-content: center;
     }
-    .showcase-card h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem;
-    }
-    .showcase-card p { font-size: 0.95rem; opacity: 0.7; line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem; }
-    .showcase-link-light {
-      color: var(--coral-light); font-weight: 600; font-size: 0.9rem;
-      text-decoration: none; display: inline-flex;
-      align-items: center; gap: 0.4rem;
-      transition: color 0.3s;
-    }
-    .showcase-link-light:hover { color: #fff; }
-    .showcase-image {
-      overflow: hidden;
-    }
-    .showcase-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
+    .ig-icon svg { width: 24px; height: 24px; }
+    .ig-handle { font-weight: 700; font-size: 1rem; }
+    .ig-sub { color: var(--grey); font-size: 0.85rem; }
+    .ig-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .ig-thumbs img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
+    .ig-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--purple); font-weight: 700; font-size: 0.9rem;
+      text-decoration: none;
     }
 
-    /* ── CTA ── */
-    .cta-section {
-      padding: 8rem 2rem;
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 4fr 5fr; }
+      .about-photo-col { order: 1; }
+      .about-text { order: 2; }
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 5rem 1.5rem 6rem;
       text-align: center;
-      position: relative; overflow: hidden;
     }
-    .cta-circle-1 {
-      position: absolute; width: 500px; height: 500px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blush), #FFE0D0);
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      z-index: 0;
-      animation: ctaFloat 20s ease-in-out infinite;
+    .contact-circle {
+      width: 260px; height: 260px; border-radius: 50%;
+      background: var(--orange); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 2.5rem;
+      padding: 1.5rem;
     }
-    .cta-circle-2 {
-      position: absolute; width: 200px; height: 200px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--lavender), #C4B8E0);
-      top: 20%; right: 10%;
-      opacity: 0.3; z-index: 0;
-      animation: float2 18s ease-in-out infinite;
+    .contact-circle h2 {
+      font-size: clamp(1.5rem, 4vw, 1.9rem);
     }
-    @keyframes ctaFloat {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.05); }
+    .contact-lead {
+      color: var(--grey); font-size: 1.05rem;
+      max-width: 460px; margin: 0 auto 2rem; line-height: 1.6;
     }
-    .cta-content {
-      position: relative; z-index: 1;
-    }
-    .cta-section .section-title { margin-bottom: 1rem; }
-    .cta-section p {
-      color: var(--navy-light); font-size: 1.05rem;
-      max-width: 500px; margin: 0 auto 2.5rem;
-      font-weight: 300;
+
+    @media (min-width: 640px) {
+      .contact-circle { width: 320px; height: 320px; }
     }
 
     /* ── FOOTER ── */
     footer {
-      text-align: center; padding: 3rem 2rem;
-      border-top: 1px solid rgba(0,0,0,0.05);
+      text-align: center; padding: 2.5rem 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
-    footer p { color: var(--navy-light); font-size: 0.8rem; font-weight: 400; }
-    footer a { color: var(--coral); text-decoration: none; }
+    footer p { color: var(--grey); font-size: 0.8rem; }
+    footer a { color: var(--purple); text-decoration: none; }
 
     /* ── FADE IN ── */
-    .fade-in {
-      opacity: 0; transform: translateY(25px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── MOBILE ── */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* ── MOBILE NAV ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
         position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--cream); padding: 2rem; gap: 1.5rem;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        background: var(--bg); padding: 2rem; gap: 1.5rem;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
       }
       .nav-toggle { display: flex; flex-direction: column; }
-      .hero { padding: 7rem 1.5rem 4rem; min-height: auto; }
-      .hero h1 { font-size: 2.8rem; }
-      .bento-grid { grid-template-columns: 1fr; }
-      .bento-1, .bento-2, .bento-3, .bento-4 { grid-column: span 1; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-photo-col { order: -1; }
-      .about-photo-accent { display: none; }
-      .about-photo-accent-2 { display: none; }
-      .showcase-card { grid-template-columns: 1fr; }
-      .showcase-image { aspect-ratio: 16/9; }
-      .about-section, .services, .showcase, .cta-section { padding: 4rem 1.5rem; }
-      .scroll-indicator { display: none; }
     }
   </style>
 </head>
@@ -482,68 +317,47 @@
     <div class="nav-links">
       <a href="#tjanster">Tjänster</a>
       <a href="#om">Om mig</a>
-      <a href="#case">Case</a>
       <a href="#kontakt" class="nav-cta">Kontakta mig</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="circle circle-1"></div>
-    <div class="circle circle-2"></div>
-    <div class="circle circle-3"></div>
-    <div class="circle circle-4"></div>
-    <div class="circle circle-5"></div>
-    <div class="hero-content fade-in">
-      <div class="hero-badge"><span class="dot"></span> Tillgänglig för nya projekt</div>
-      <h1>Jag hjälper dig<br>att <em>synas</em></h1>
-      <p>Hemsida, storytelling, annonsering och nyhetsbrev — en helhetslösning för dig som vill nå fler kunder.</p>
-      <div class="hero-buttons">
-        <a href="#kontakt" class="btn-primary">Kontakta mig &rarr;</a>
-        <a href="#tjanster" class="btn-ghost">Mer om tjänster &darr;</a>
-      </div>
+    <div class="hero-media">
+      <span class="hero-badge">Specialiserad på hälsa &amp; livsstil</span>
+      <img src="assets/hero-photo.jpg" alt="Amanda Hultin sitter på en löparbana med armarna utsträckta" loading="eager">
     </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      Scroll
+    <div class="hero-content fade-in">
+      <div class="hero-desktop-blob"></div>
+      <span class="hero-badge">Specialiserad på hälsa &amp; livsstil</span>
+      <div class="hero-accent"></div>
+      <h1>Jag hjälper er beröra fler.</h1>
+      <p class="hero-lead">Storytelling, native advertising och content marketing för varumärken inom hälsa och livsstil.</p>
+      <a href="#kontakt" class="cta-button">Kontakta mig &rarr;</a>
     </div>
   </section>
 
   <!-- Services -->
   <section class="services" id="tjanster">
     <div class="services-header fade-in">
-      <div class="section-overline">Tjänster</div>
-      <h2 class="section-title">Allt för din digitala närvaro</h2>
-      <p class="section-sub">Från hemsida till nyhetsbrev — jag hjälper dig hela vägen.</p>
+      <div class="eyebrow">Vad jag gör</div>
+      <h2 class="section-title">Tre sätt att synas.</h2>
     </div>
-    <div class="bento-grid">
-      <div class="bento-card bento-1 fade-in">
-        <div class="bento-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E05A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3>Hemsida &amp; design</h3>
-        <p>En modern och mobilanpassad sajt som gör att kunder hittar dig och ditt erbjudande.</p>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-number">01</div>
+        <h3>Storytelling</h3>
+        <p>Jag hittar historien i ert varumärke och berättar den så att fler minns er.</p>
       </div>
-      <div class="bento-card bento-2 fade-in">
-        <div class="bento-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3>Storytelling &amp; innehåll</h3>
-        <p>Engagerande texter som bygger förtroende och får din målgrupp att komma tillbaka.</p>
+      <div class="service-card fade-in">
+        <div class="service-number">02</div>
+        <h3>Native advertising</h3>
+        <p>Annonsering som blir till redaktionellt innehåll, i kanaler er målgrupp redan litar på.</p>
       </div>
-      <div class="bento-card bento-3 fade-in">
-        <div class="bento-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2D8A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>Annonsering</h3>
-        <p>Riktade kampanjer på Google och sociala medier som når rätt personer och bidrar till din affär.</p>
-      </div>
-      <div class="bento-card bento-4 fade-in">
-        <div class="bento-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <h3>Nyhetsbrev</h3>
-        <p>Regelbundna utskick som bygger relationer och engagemang.</p>
+      <div class="service-card fade-in">
+        <div class="service-number">03</div>
+        <h3>Content marketing</h3>
+        <p>Innehåll som gör att rätt personer hittar er och stannar kvar.</p>
       </div>
     </div>
   </section>
@@ -551,55 +365,55 @@
   <!-- About -->
   <section class="about-section" id="om">
     <div class="about-grid fade-in">
-      <div class="about-text">
-        <div class="section-overline">Om mig</div>
-        <h2 class="section-title">Trevligt att träffas!</h2>
-        <p>Jag heter Amanda och jag älskar att hjälpa människor och företag att berätta sin historia. Med bakgrund inom journalistik och reklam har jag hittat min grej i skärningspunkten mellan kreativitet och strategi.</p>
-        <p>Just nu är jag föräldraledig och driver bland annat <strong>Swedish Run Clubs</strong> — ett eget projekt som visar på vad rätt strategi och optimering kan åstadkomma på kort tid. Det är det som driver mig: att ta en idé och göra den synlig.</p>
-        <div class="about-sig">/ Amanda</div>
-        <div class="about-cta">
-          <a href="#kontakt" class="btn-primary">Kontakta mig &rarr;</a>
-        </div>
-      </div>
       <div class="about-photo-col">
         <div class="about-photo">
-          <img src="amanda-charlie.jpeg" alt="Amanda Hultin" loading="lazy">
+          <img src="assets/amanda-charlie.jpg" alt="Amanda Hultin" loading="lazy">
         </div>
-        <div class="about-photo-accent"></div>
-        <div class="about-photo-accent-2"></div>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow">Om mig</div>
+        <h2 class="section-title" style="margin-bottom:1.25rem;">Trevligt att träffas!</h2>
+        <p>Jag heter Amanda och arbetar med hälsa och livsstil, från idé till färdig berättelse.</p>
+        <p>Med bakgrund inom journalistik och reklam har jag hittat min grej i skärningspunkten mellan kreativitet och strategi, med ett särskilt fokus på allt som får oss att må bra och röra på oss.</p>
+        <p>Jag arbetar som frilans för att jag brinner för att hjälpa företag med en variation av projekt och uppdrag. Det finns en styrka i att kunna se saker utifrån och komma med nya perspektiv.</p>
+        <p>Vid sidan av uppdragen springer jag några mil i veckan och är mamma till världens bästa lilla tjej.</p>
+        <div class="about-sig">/ Amanda</div>
+
+        <div class="ig-card">
+          <div class="ig-card-head">
+            <div class="ig-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="4.2" stroke="white" stroke-width="1.8"/>
+                <circle cx="17.6" cy="6.4" r="1.1" fill="white"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ig-handle">@runclubs.se</div>
+              <div class="ig-sub">Community på Instagram</div>
+            </div>
+          </div>
+          <div class="ig-thumbs">
+            <!-- Auto-updated daily by .github/workflows/instagram-sync.yml
+                 via the Instagram Graph API — see scripts/sync_instagram.py -->
+            <img src="assets/instagram/1.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+            <img src="assets/instagram/2.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+            <img src="assets/instagram/3.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+          </div>
+          <a href="https://instagram.com/runclubs.se" class="ig-link" target="_blank" rel="noopener">Följ Run Clubs på Instagram &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Showcase -->
-  <section class="showcase" id="case">
+  <!-- Contact -->
+  <section class="contact-section" id="kontakt">
     <div class="fade-in">
-      <div class="section-overline">Case</div>
-      <h2 class="section-title">Byggt från grunden</h2>
-    </div>
-    <div class="showcase-card fade-in">
-      <div class="showcase-card-text">
-        <h3>Swedish Run Clubs</h3>
-        <p>En digital guide till löparklubbar i Sverige. Designad, skriven och sökmotoroptimerad med content marketing och modern webbdesign — ett projekt som visar vad rätt strategi och optimering kan åstadkomma på kort tid.</p>
-        <a href="https://amandahultin.github.io/runclubs/" class="showcase-link-light" target="_blank" rel="noopener">Besök sajten &rarr;</a>
+      <div class="contact-circle">
+        <h2>Redo att ta nästa steg?</h2>
       </div>
-      <div class="showcase-image">
-        <img src="hero.jpg" alt="Swedish Run Clubs — löparklubbar i Sverige" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="kontakt">
-    <div class="cta-circle-1"></div>
-    <div class="cta-circle-2"></div>
-    <div class="cta-content fade-in">
-      <div class="section-overline">Kontakt</div>
-      <h2 class="section-title">Redo att ta nästa steg?</h2>
-      <p>Jag ses gärna för en kaffe eller ett digitalt möte så pratar vi om hur jag kan hjälpa dig och ditt företag att synas online.</p>
-      <a href="mailto:amanda@runclubs.se" class="btn-primary">
-        Kontakta mig &rarr;
-      </a>
+      <p class="contact-lead">Jag ses gärna för en kaffe eller ett digitalt möte så pratar vi om hur jag kan hjälpa dig och ditt företag att synas.</p>
+      <a href="mailto:amanda@runclubs.se" class="cta-button">Kontakta mig &rarr;</a>
     </div>
   </section>
 

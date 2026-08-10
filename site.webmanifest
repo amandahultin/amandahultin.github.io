@@ -1,0 +1,10 @@
+{
+  "name": "Amanda Hultin",
+  "short_name": "Amanda Hultin",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#7C52DC",
+  "background_color": "#FAF8F5",
+  "display": "standalone"
+}
