@@ -38,7 +38,11 @@ def main():
     items = [
         item for item in resp.json().get("data", [])
         if item.get("media_type") != "VIDEO" or item.get("thumbnail_url")
-    ][:POST_COUNT]
+    ]
+    # Don't rely on the API returning newest-first — sort explicitly so
+    # slot 1 (top-left in the grid) is always the most recent post.
+    items.sort(key=lambda item: item.get("timestamp", ""), reverse=True)
+    items = items[:POST_COUNT]
 
     if not items:
         print("No media returned, leaving existing feed untouched.")

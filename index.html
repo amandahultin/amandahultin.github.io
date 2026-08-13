@@ -469,9 +469,14 @@
         const playIcon = post.mediaType === 'VIDEO'
           ? '<svg class="ig-play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>'
           : '';
+        // Cache-bust by post id: the sync script reuses filenames like
+        // assets/instagram/1.jpg for whichever post is newest that day, so
+        // without this, browsers keep serving yesterday's cached image at
+        // that URL even after the underlying file (and caption) changes.
+        const imgSrc = `${post.imageUrl}?v=${encodeURIComponent(post.id || '')}`;
         return `
           <a class="ig-post" href="${post.permalink}" target="_blank" rel="noopener noreferrer" title="${caption}">
-            <img src="${post.imageUrl}" alt="${caption}" loading="lazy">
+            <img src="${imgSrc}" alt="${caption}" loading="lazy">
             ${playIcon}
           </a>
         `;
