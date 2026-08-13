@@ -1,11 +1,17 @@
 """Fetch the latest Instagram posts for the connected Business account via
-Meta's Instagram Graph API and save them as square thumbnails in
-assets/instagram/. Run by .github/workflows/instagram-sync.yml on a schedule.
+Meta's Instagram Graph API, save them as square thumbnails, and write
+posts.json describing them — all into assets/instagram/. The ig-card on the
+homepage fetches posts.json client-side to render a live feed. Run by
+.github/workflows/instagram-sync.yml on a schedule.
 
 Requires env vars IG_ACCESS_TOKEN (long-lived token) and IG_USER_ID
 (Instagram Business Account ID).
+
+Thumbnails are re-hosted locally (not linked straight to Instagram's CDN)
+because Instagram's media URLs are signed and expire after a few days.
 """
 import io
+import json
 import os
 
 import requests
@@ -15,15 +21,16 @@ TOKEN = os.environ["IG_ACCESS_TOKEN"]
 USER_ID = os.environ["IG_USER_ID"]
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "assets", "instagram")
 GRAPH_VERSION = "v21.0"
+POST_COUNT = 6
 
 
 def main():
     resp = requests.get(
         f"https://graph.facebook.com/{GRAPH_VERSION}/{USER_ID}/media",
         params={
-            "fields": "id,media_type,media_url,thumbnail_url,permalink,timestamp",
+            "fields": "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp",
             "access_token": TOKEN,
-            "limit": 6,
+            "limit": 12,
         },
         timeout=30,
     )
@@ -31,13 +38,14 @@ def main():
     items = [
         item for item in resp.json().get("data", [])
         if item.get("media_type") != "VIDEO" or item.get("thumbnail_url")
-    ][:3]
+    ][:POST_COUNT]
 
     if not items:
-        print("No media returned, leaving existing thumbnails untouched.")
+        print("No media returned, leaving existing feed untouched.")
         return
 
     os.makedirs(OUT_DIR, exist_ok=True)
+    posts = []
     for i, item in enumerate(items, start=1):
         url = item.get("thumbnail_url") or item.get("media_url")
         if not url:
@@ -53,6 +61,19 @@ def main():
         im.thumbnail((640, 640), Image.LANCZOS)
         im.save(os.path.join(OUT_DIR, f"{i}.jpg"), quality=82, optimize=True)
         print(f"Saved {i}.jpg from {item.get('permalink')}")
+
+        posts.append({
+            "id": item.get("id"),
+            "caption": item.get("caption", ""),
+            "mediaType": item.get("media_type"),
+            "imageUrl": f"assets/instagram/{i}.jpg",
+            "permalink": item.get("permalink"),
+            "timestamp": item.get("timestamp"),
+        })
+
+    with open(os.path.join(OUT_DIR, "posts.json"), "w", encoding="utf-8") as f:
+        json.dump(posts, f, ensure_ascii=False, indent=2)
+    print(f"Wrote posts.json with {len(posts)} posts.")
 
 
 if __name__ == "__main__":

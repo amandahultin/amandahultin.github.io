@@ -239,6 +239,13 @@
     .ig-sub { color: var(--grey); font-size: 0.85rem; }
     .ig-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
     .ig-thumbs img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
+    .ig-post { position: relative; display: block; }
+    .ig-post:hover img { opacity: 0.9; }
+    .ig-play-icon {
+      position: absolute; top: 6px; right: 6px; width: 18px; height: 18px;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+    }
+    .ig-feed-status { color: var(--grey); font-size: 0.85rem; margin-bottom: 1rem; }
     .ig-link {
       display: inline-flex; align-items: center; gap: 0.4rem;
       color: var(--purple); font-weight: 700; font-size: 0.9rem;
@@ -395,12 +402,16 @@
               <div class="ig-sub">Community på Instagram</div>
             </div>
           </div>
-          <div class="ig-thumbs">
-            <!-- Auto-updated daily by .github/workflows/instagram-sync.yml
-                 via the Instagram Graph API — see scripts/sync_instagram.py -->
+          <!-- Auto-updated daily by .github/workflows/instagram-sync.yml via
+               the Instagram Graph API — see scripts/sync_instagram.py.
+               Rendered here from assets/instagram/posts.json. -->
+          <div class="ig-thumbs" id="ig-feed">
             <img src="assets/instagram/1.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
             <img src="assets/instagram/2.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
             <img src="assets/instagram/3.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+            <img src="assets/instagram/4.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+            <img src="assets/instagram/5.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
+            <img src="assets/instagram/6.jpg" alt="Senaste inlägg från @runclubs.se" loading="lazy">
           </div>
           <a href="https://instagram.com/runclubs.se" class="ig-link" target="_blank" rel="noopener">Följ Run Clubs på Instagram &rarr;</a>
         </div>
@@ -431,6 +442,51 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+  <script>
+    // Upgrades the static ig-thumbs fallback into a live-linked feed, each
+    // thumbnail pointing at its own Instagram post. Data comes from
+    // assets/instagram/posts.json, refreshed daily — see
+    // scripts/sync_instagram.py and .github/workflows/instagram-sync.yml.
+    (function () {
+      const feed = document.getElementById('ig-feed');
+      if (!feed) return;
+
+      fetch('assets/instagram/posts.json')
+        .then((res) => {
+          if (!res.ok) throw new Error(`posts.json ${res.status}`);
+          return res.json();
+        })
+        .then((posts) => {
+          if (!Array.isArray(posts) || posts.length === 0) return;
+          feed.innerHTML = posts.slice(0, 6).map(renderPost).join('');
+        })
+        .catch((err) => console.warn('Instagram feed: keeping static fallback —', err));
+
+      function renderPost(post) {
+        const caption = escapeHtml(truncate(post.caption || '', 120)) || 'Senaste inlägg från @runclubs.se';
+        const playIcon = post.mediaType === 'VIDEO'
+          ? '<svg class="ig-play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>'
+          : '';
+        return `
+          <a class="ig-post" href="${post.permalink}" target="_blank" rel="noopener noreferrer" title="${caption}">
+            <img src="${post.imageUrl}" alt="${caption}" loading="lazy">
+            ${playIcon}
+          </a>
+        `;
+      }
+
+      function truncate(str, n) {
+        return str.length > n ? str.slice(0, n - 1) + '…' : str;
+      }
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+    })();
   </script>
 </body>
 </html>
